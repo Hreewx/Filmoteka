@@ -1,0 +1,12 @@
+@import "../../app/styles/index.scss";
+
+.navlist {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  &__link:visited {
+    color: $primary-white-color;
+  }
+}
