@@ -1,13 +1,14 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import Login from "./pages/Login";
-import Registration from "./pages/Registration";
-import PageNotFound from "./pages/PageNotFound";
-import AppLayout from "./ui/AppLayout";
-import Dashboard from "./pages/Dashboard";
-import Homepage from "./pages/Homepage";
+import Login from "../pages/Login";
+import Registration from "../pages/Registration";
+import PageNotFound from "../pages/PageNotFound";
+import AppLayout from "../widgets/AppLayout/AppLayout";
+import Dashboard from "../pages/Dashboard";
+import Homepage from "../pages/Homepage";
+import About from "../pages/About";
 
-import "./config.scss";
+import "./styles/index.scss";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,11 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+
+      {
+        path: "/about",
+        element: <About />,
       },
 
       {

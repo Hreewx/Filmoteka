@@ -1,0 +1,14 @@
+@import "../../app/styles/index.scss";
+
+.footer {
+  background-color: $primary-black-color;
+  color: $primary-white-color;
+  padding: 2rem;
+  height: 8vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-top: 0.5px solid $primary-purple-color;
+}

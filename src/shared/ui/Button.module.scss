@@ -1,0 +1,16 @@
+@import "../../app/styles/index.scss";
+
+.button_home {
+  width: 15rem;
+  height: 5rem;
+  border: none;
+  background-color: $primary-purple-color;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+
+  font-size: 2rem;
+  color: $primary-white-color;
+}

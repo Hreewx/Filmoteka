@@ -23,8 +23,18 @@ a {
 
 button {
   cursor: pointer;
+  outline: none;
+}
+
+input {
+  outline: none;
 }
 
 ul {
   list-style: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
 }
