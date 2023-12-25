@@ -1,0 +1,16 @@
+@import "../app/styles/index.scss";
+
+.notFound {
+  height: 84vh;
+  color: $primary-white-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $gradient;
+  padding: 5rem;
+
+  & h2 {
+    font-size: 4rem;
+    text-align: center;
+  }
+}

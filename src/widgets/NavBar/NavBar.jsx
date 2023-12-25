@@ -5,13 +5,13 @@ function NavBar() {
   return (
     <nav>
       <ul className={styles.navlist}>
-        <NavLink className={styles.navlist__link} to={"/about"}>
+        <NavLink className={styles.navlist__link} to="/about">
           About
         </NavLink>
-        <NavLink className={styles.navlist__link} to={"/links"}>
+        <NavLink className={styles.navlist__link} to="/links">
           Links
         </NavLink>
-        <NavLink to="/login" className={styles.navlist__link}>
+        <NavLink className={styles.navlist__link} to="/login">
           Login
         </NavLink>
       </ul>
