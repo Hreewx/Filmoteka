@@ -5,17 +5,17 @@
   align-items: center;
   justify-content: center;
   gap: 4rem;
+}
 
-  &__link {
-    position: relative;
-    font-size: 1.8rem;
-  }
+.link {
+  position: relative;
+  font-size: 1.8rem;
 
-  &__link:visited {
+  &:visited {
     color: $primary-white-color;
   }
 
-  &__link::after {
+  &::after {
     content: "";
     width: 100%;
     display: block;
@@ -24,7 +24,7 @@
     left: 0;
   }
 
-  &__link:hover::after {
+  &:hover::after {
     border-bottom: 2px solid $primary-purple-color;
     animation: 0.3s animateLink;
     -webkit-animation: 0.3s animateLink;

@@ -1,4 +1,3 @@
-// import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { useLogin } from "../shared/utils/hooks/useLogin";
@@ -7,9 +6,10 @@ import styles from "./Login.module.scss";
 import ButtonForm from "../shared/ui/ButtonForm";
 
 function Login() {
-  const [email, setEmail] = useState("test@mail.ru");
-  const [password, setPassword] = useState("12345678");
-  const { login } = useLogin();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { login, isPending } = useLogin();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -18,15 +18,6 @@ function Login() {
 
     login({ email, password });
   }
-
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   formState: { errors },
-  // } = useForm();
-
-  // const onSubmit = (data) => console.log(data);
-  // console.log(errors);
 
   return (
     <section className={styles.container}>
@@ -38,7 +29,7 @@ function Login() {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          // {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
+          disabled={isPending}
         />
 
         <input
@@ -47,13 +38,10 @@ function Login() {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          // {...register("Password", {
-          //   required: true,
-          //   maxLength: 8,
-          // })}
+          disabled={isPending}
         />
 
-        <ButtonForm>Sign In</ButtonForm>
+        <ButtonForm disabled={isPending}>Sign In</ButtonForm>
 
         <div className={styles.bottomContainer}>
           <p>Dont have an account? </p>

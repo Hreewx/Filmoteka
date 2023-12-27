@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Toaster } from "react-hot-toast";
 
 import Login from "../pages/Login";
 import Registration from "../pages/Registration";
@@ -62,6 +63,28 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <RouterProvider router={router}></RouterProvider>
+
+      <Toaster
+        position="top-center"
+        gutter={12}
+        containerStyle={{ margin: "8vh" }}
+        toastOptions={{
+          success: {
+            duration: 4000,
+          },
+          error: {
+            duration: 4000,
+          },
+          style: {
+            fontSize: "16px",
+            maxWidth: "400px",
+            border: "1px solid #8c3be5",
+            color: "#f7f6f8",
+            backgroundColor: "#212121",
+          },
+          iconTheme: { primary: "#df0237", secondary: "#f7f6f8" },
+        }}
+      />
     </QueryClientProvider>
   );
 }

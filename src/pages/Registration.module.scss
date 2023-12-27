@@ -39,6 +39,10 @@
       -o-border-radius: 5px;
     }
 
+    & .error {
+      color: $error-color;
+    }
+
     & p {
       text-align: center;
       color: $primary-white-color;

@@ -1,17 +1,18 @@
 import { NavLink } from "react-router-dom";
-import ButtonForm from "../shared/ui/ButtonForm";
-import styles from "./Registration.module.scss";
 import { useForm } from "react-hook-form";
 
-function Registration() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+import ButtonForm from "../shared/ui/ButtonForm";
+import styles from "./Registration.module.scss";
 
-  const onSubmit = (data) => console.log(data);
-  console.log(errors);
+// import toast from "react-hot-toast";
+
+function Registration() {
+  const { register, formState, getValues, handleSubmit } = useForm();
+  const { errors } = formState;
+
+  function onSubmit(data) {
+    console.log(data);
+  }
 
   return (
     <section className={styles.container}>
@@ -19,30 +20,58 @@ function Registration() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
+          id="email"
           autoComplete="off"
           placeholder="Email"
-          {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+          {...register("email", {
+            required: "This field is required",
+            pattern: {
+              value: /^\S+@\S+$/i,
+              message: "Please provide a valid email address",
+            },
+          })}
         />
+        {errors.email && (
+          <p className={styles.error} role="alert">
+            {errors.email.message}
+          </p>
+        )}
 
         <input
           type="password"
+          id="password"
           autoComplete="off"
           placeholder="Password"
           {...register("password", {
-            required: true,
-            maxLength: 8,
+            required: "This field is required",
+            minLength: {
+              value: 8,
+              message: "Password needs a minimum of 8 characters",
+            },
           })}
         />
+        {errors.password && (
+          <p className={styles.error} role="alert">
+            {errors.password.message}
+          </p>
+        )}
 
         <input
           type="password"
+          id="passwordConfirm"
           autoComplete="off"
           placeholder="Repeat password"
           {...register("passwordConfirm", {
-            required: true,
-            maxLength: 8,
+            required: "This field is required",
+            validate: (value) =>
+              value === getValues().password || "Passwords need to match",
           })}
         />
+        {errors.passwordConfirm && (
+          <p className={styles.error} role="alert">
+            {errors.passwordConfirm.message}
+          </p>
+        )}
 
         <ButtonForm>Sign Up</ButtonForm>
 
