@@ -71,9 +71,14 @@ function App() {
         toastOptions={{
           success: {
             duration: 4000,
+            iconTheme: {
+              primary: "#047453",
+              secondary: "#f7f6f8",
+            },
           },
           error: {
             duration: 4000,
+            iconTheme: { primary: "#df0237", secondary: "#f7f6f8" },
           },
           style: {
             fontSize: "16px",
@@ -82,7 +87,6 @@ function App() {
             color: "#f7f6f8",
             backgroundColor: "#212121",
           },
-          iconTheme: { primary: "#df0237", secondary: "#f7f6f8" },
         }}
       />
     </QueryClientProvider>

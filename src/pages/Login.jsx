@@ -23,23 +23,27 @@ function Login() {
     <section className={styles.container}>
       <h2>Sign In</h2>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          autoComplete="off"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          disabled={isPending}
-        />
+        <div className={styles.inputWrapper}>
+          <input
+            type="text"
+            autoComplete="off"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            disabled={isPending}
+          />
+        </div>
 
-        <input
-          type="password"
-          autoComplete="off"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          disabled={isPending}
-        />
+        <div className={styles.inputWrapper}>
+          <input
+            type="password"
+            autoComplete="off"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            disabled={isPending}
+          />
+        </div>
 
         <ButtonForm disabled={isPending}>Sign In</ButtonForm>
 

@@ -20,7 +20,6 @@
     display: flex;
     flex-direction: column;
     max-width: 55rem;
-    gap: 2rem;
 
     & label {
       color: $primary-white-color;
@@ -37,13 +36,16 @@
       -moz-border-radius: 5px;
       -ms-border-radius: 5px;
       -o-border-radius: 5px;
-    }
 
-    & p {
-      text-align: center;
-      color: $primary-white-color;
+      &:disabled {
+        cursor: not-allowed;
+      }
     }
   }
+}
+
+.inputWrapper {
+  height: 8rem;
 }
 
 .link {
@@ -52,7 +54,13 @@
 }
 
 .bottomContainer {
+  margin-top: 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  & p {
+    text-align: center;
+    color: $primary-white-color;
+  }
 }
