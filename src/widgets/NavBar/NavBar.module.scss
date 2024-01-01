@@ -4,9 +4,44 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 4rem;
+}
 
-  &__link:visited {
+.link {
+  position: relative;
+  font-size: 1.8rem;
+  color: $primary-white-color;
+
+  &:visited {
     color: $primary-white-color;
   }
+
+  &::after {
+    content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 2.4rem;
+    left: 0;
+  }
+
+  &:hover::after {
+    border-bottom: 2px solid $primary-purple-color;
+    animation: 0.3s animateLink;
+    -webkit-animation: 0.3s animateLink;
+  }
+}
+
+@keyframes animateLink {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.active {
+  border-bottom: 1px solid grey;
 }

@@ -1,0 +1,16 @@
+@import "../../app/styles/index.scss";
+
+.button {
+  color: $primary-black-color;
+  height: 4rem;
+  border: 1px solid $primary-purple-color;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}

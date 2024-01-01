@@ -1,13 +1,9 @@
 @import "../app/styles/index.scss";
 
 .about {
-  height: 86vh;
+  height: 84vh;
   padding: 5rem;
-  background: linear-gradient(
-    90deg,
-    $primary-black-color 25%,
-    $primary-purple-color
-  );
+  background: $gradient;
 
   &__container {
     display: flex;
