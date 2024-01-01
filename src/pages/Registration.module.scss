@@ -20,33 +20,6 @@
     display: flex;
     flex-direction: column;
     max-width: 40rem;
-
-    & input {
-      width: 30rem;
-      height: 4rem;
-      padding: 1rem;
-      color: $primary-black-color;
-      border: 1px solid $primary-purple-color;
-      border-radius: 5px;
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      -ms-border-radius: 5px;
-      -o-border-radius: 5px;
-
-      &:disabled {
-        cursor: not-allowed;
-      }
-    }
-
-    & .error {
-      color: $error-color;
-      font-size: 1.3rem;
-      margin: 1.2rem 0;
-    }
-
-    & p {
-      color: $primary-white-color;
-    }
   }
 }
 
@@ -64,4 +37,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  & p {
+    color: $primary-white-color;
+  }
 }

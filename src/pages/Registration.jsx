@@ -4,11 +4,16 @@ import { useSignup } from "../shared/utils/hooks/useSignup";
 
 import ButtonForm from "../shared/ui/ButtonForm";
 import styles from "./Registration.module.scss";
+import InputForm from "../shared/ui/InputForm";
 
 function Registration() {
   const { signup, isPending } = useSignup();
-  const { register, formState, getValues, handleSubmit, reset } = useForm();
+  const { register, formState, getValues, handleSubmit, reset } = useForm({
+    mode: "onBlur",
+  });
   const { errors } = formState;
+
+  console.log(errors);
 
   function onSubmit({ email, password }) {
     signup(
@@ -24,68 +29,61 @@ function Registration() {
       <h2>Sign Up</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputWrapper}>
-          <input
+          <InputForm
             type="text"
             id="email"
             autoComplete="off"
             placeholder="Email"
             disabled={isPending}
-            {...register("email", {
-              required: "This field is required",
-              pattern: {
-                value: /^\S+@\S+$/i,
-                message: "Please provide a valid email address",
-              },
-            })}
+            register={{
+              ...register("email", {
+                required: "This field is required",
+                pattern: {
+                  value: /^\S+@\S+$/i,
+                  message: "Please provide a valid email address",
+                },
+              }),
+            }}
+            errorMessage={errors.email?.message}
           />
-
-          {errors.email && (
-            <p className={styles.error} role="alert">
-              {errors.email.message}
-            </p>
-          )}
         </div>
 
         <div className={styles.inputWrapper}>
-          <input
+          <InputForm
             type="password"
             id="password"
             autoComplete="off"
             placeholder="Password"
             disabled={isPending}
-            {...register("password", {
-              required: "This field is required",
-              minLength: {
-                value: 8,
-                message: "Password needs a minimum of 8 characters",
-              },
-            })}
+            register={{
+              ...register("password", {
+                required: "This field is required",
+                minLength: {
+                  value: 8,
+                  message: "Password needs a minimum of 8 characters",
+                },
+              }),
+            }}
+            errorMessage={errors.password?.message}
           />
-          {errors.password && (
-            <p className={styles.error} role="alert">
-              {errors.password.message}
-            </p>
-          )}
         </div>
 
         <div className={styles.inputWrapper}>
-          <input
+          <InputForm
             type="password"
             id="passwordConfirm"
             autoComplete="off"
             placeholder="Repeat password"
             disabled={isPending}
-            {...register("passwordConfirm", {
-              required: "This field is required",
-              validate: (value) =>
-                value === getValues().password || "Passwords need to match",
-            })}
+            register={{
+              ...register("passwordConfirm", {
+                required: "This field is required",
+                validate: (value) =>
+                  value === getValues().password || "Passwords need to match",
+              }),
+            }}
+            errorMessage={errors.passwordConfirm?.message}
           />
-          {errors.passwordConfirm && (
-            <p className={styles.error} role="alert">
-              {errors.passwordConfirm.message}
-            </p>
-          )}
         </div>
 
         <ButtonForm disabled={isPending}>Sign Up</ButtonForm>
