@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import Button from "../shared/ui/Button";
 import SliderHome from "../widgets/SliderHome/SliderHome";
 import styles from "./Homepage.module.scss";
@@ -12,7 +13,9 @@ function Homepage() {
           large company. Choose a movie you watched and leave ratings and
           comments with your friends!
         </p>
-        <Button />
+        <NavLink to="/registration">
+          <Button />
+        </NavLink>
       </div>
       <div className={styles.home__right}>
         <SliderHome />

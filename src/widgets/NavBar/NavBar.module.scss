@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
+  gap: 6rem;
 }
 
 .link {
@@ -30,6 +30,10 @@
     animation: 0.3s animateLink;
     -webkit-animation: 0.3s animateLink;
   }
+
+  &.active {
+    border-bottom: 2px solid $primary-purple-color;
+  }
 }
 
 @keyframes animateLink {
@@ -44,4 +48,27 @@
 
 .active {
   border-bottom: 1px solid grey;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  &Content {
+    display: none;
+    position: absolute;
+    width: 10rem;
+    top: 100%;
+    left: -50%;
+    background-color: $primary-black-color;
+    z-index: 1;
+
+    & .linkdrop {
+      display: block;
+      padding: 1rem;
+    }
+  }
+  &:hover &Content {
+    display: block;
+  }
 }
