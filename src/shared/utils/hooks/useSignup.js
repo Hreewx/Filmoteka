@@ -1,12 +1,16 @@
 import { useMutation } from "@tanstack/react-query";
 import { signup as signupApi } from "../../api/apiAuth";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 export function useSignup() {
+  const navigate = useNavigate();
+
   const { mutate: signup, isPending } = useMutation({
     mutationFn: signupApi,
     onSuccess: () => {
       toast.success("Account successfully created!");
+      navigate("/dashboard");
     },
     onError: () => {
       toast.error("Something went wrong creating account. Please try again");
