@@ -6,19 +6,7 @@
   height: 84vh;
 }
 
-.groupContainer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
-}
-
-.group {
-  border: 1px solid $primary-white-color;
-  color: $primary-white-color;
+.buttonsContainer {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
+  margin-bottom: 4rem;
 }

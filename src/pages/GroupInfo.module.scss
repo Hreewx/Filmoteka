@@ -1,0 +1,28 @@
+@import "../app/styles/index.scss";
+
+.container {
+  @include container;
+}
+
+.buttonsContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  color: $primary-white-color;
+
+  & div {
+    margin: 0 auto;
+  }
+}
+
+.filmsWatched {
+  & p {
+    color: $primary-white-color;
+  }
+}

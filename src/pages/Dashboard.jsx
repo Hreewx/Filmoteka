@@ -1,41 +1,17 @@
+import { NavLink } from "react-router-dom";
+import Button from "../shared/ui/Button";
 import styles from "./Dashboard.module.scss";
+import GroupsTable from "../widgets/GroupsTable/GroupsTable";
 
 function Dashboard() {
   return (
     <section className={styles.container}>
-      <div className={styles.groupContainer}>
-        <div className={styles.group}>
-          <h2>Group Name</h2>
-          <p>Group Partisipants: 8</p>
-          <p>Number of reviews: 9</p>
-          <p>Group Overview</p>
-          <button>See More</button>
-        </div>
-
-        <div className={styles.group}>
-          <h2>Group Name</h2>
-          <p>Group Partisipants: 8</p>
-          <p>Number of reviews: 9</p>
-          <p>Group Overview</p>
-          <button>See More</button>
-        </div>
-
-        <div className={styles.group}>
-          <h2>Group Name</h2>
-          <p>Group Partisipants: 8</p>
-          <p>Number of reviews: 9</p>
-          <p>Group Overview</p>
-          <button>See More</button>
-        </div>
-
-        <div className={styles.group}>
-          <h2>Group Name</h2>
-          <p>Group Partisipants: 8</p>
-          <p>Number of reviews: 9</p>
-          <p>Group Overview</p>
-          <button>See More</button>
-        </div>
+      <div className={styles.buttonsContainer}>
+        <NavLink to="/dashboard/creategroup">
+          <Button>Create a new group</Button>
+        </NavLink>
       </div>
+      <GroupsTable />
     </section>
   );
 }

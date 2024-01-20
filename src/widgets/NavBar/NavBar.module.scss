@@ -31,7 +31,7 @@
     -webkit-animation: 0.3s animateLink;
   }
 
-  &.active {
+  &:global.active {
     border-bottom: 2px solid $primary-purple-color;
   }
 }
@@ -44,10 +44,6 @@
   100% {
     width: 100%;
   }
-}
-
-.active {
-  border-bottom: 1px solid grey;
 }
 
 .dropdown {
@@ -71,4 +67,9 @@
   &:hover &Content {
     display: block;
   }
+}
+
+.icon {
+  cursor: pointer;
+  font-size: 2rem;
 }

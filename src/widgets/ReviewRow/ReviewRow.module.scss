@@ -1,0 +1,18 @@
+@import "../../app/styles/index.scss";
+
+.reviewRow {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border: 1px solid $primary-white-color;
+  color: $primary-white-color;
+  padding: 1rem;
+
+  & div {
+    margin: 0 auto;
+  }
+
+  & img {
+    width: 15rem;
+    height: 15rem;
+  }
+}

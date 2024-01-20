@@ -13,11 +13,9 @@ function Registration() {
   });
   const { errors } = formState;
 
-  console.log(errors);
-
-  function onSubmit({ email, password }) {
+  function onSubmit({ email, password, login }) {
     signup(
-      { email, password },
+      { email, password, login },
       {
         onSettled: () => reset(),
       }
@@ -28,6 +26,26 @@ function Registration() {
     <section className={styles.container}>
       <h2>Sign Up</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
+        <div className={styles.inputWrapper}>
+          <InputForm
+            type="text"
+            id="login"
+            autoComplete="off"
+            placeholder="Login"
+            disabled={isPending}
+            register={{
+              ...register("login", {
+                required: "This field is required",
+                minLength: {
+                  value: 2,
+                  message: "Login must be at least 2 characters",
+                },
+              }),
+            }}
+            errorMessage={errors.login?.message}
+          />
+        </div>
+
         <div className={styles.inputWrapper}>
           <InputForm
             type="text"

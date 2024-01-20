@@ -1,10 +1,14 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { HiOutlineUser } from "react-icons/hi2";
 
 import styles from "./NavBar.module.scss";
-import { useLogout } from "../../shared/utils/hooks/useLogout";
 
 function NavBar({ isAuthenticated }) {
-  const { logout } = useLogout();
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate("/profile");
+  }
 
   return (
     <nav>
@@ -20,18 +24,22 @@ function NavBar({ isAuthenticated }) {
         <NavLink className={styles.link} to="/links">
           Links
         </NavLink>
-        <NavLink className={`${styles.link} ${styles.dropdown}`} to="/login">
-          <div className={styles.dropdownContent}>
-            <NavLink className={styles.linkdrop}>Sign In</NavLink>
-            <NavLink className={styles.linkdrop}>Sign Up</NavLink>
-            {isAuthenticated ? (
-              <NavLink className={styles.linkdrop} onClick={logout}>
-                Logout
-              </NavLink>
-            ) : null}
-          </div>
-          Login
-        </NavLink>
+
+        {isAuthenticated ? (
+          <HiOutlineUser className={styles.icon} onClick={handleClick}>
+            <div className={styles.dropdownContent}>
+              <NavLink className={styles.linkdrop}>Sign In</NavLink>
+              <NavLink className={styles.linkdrop}>Sign Up</NavLink>
+              {isAuthenticated ? (
+                <NavLink className={styles.linkdrop}>Logout</NavLink>
+              ) : null}
+            </div>
+          </HiOutlineUser>
+        ) : (
+          <NavLink className={`${styles.link} ${styles.dropdown}`} to="/login">
+            Log In
+          </NavLink>
+        )}
       </ul>
     </nav>
   );

@@ -8,6 +8,9 @@ function InputForm({
   disabled,
   register,
   errorMessage,
+  value,
+  onChange,
+  accept,
 }) {
   return (
     <>
@@ -18,7 +21,10 @@ function InputForm({
         autoComplete={autoComplete}
         placeholder={placeholder}
         disabled={disabled}
+        value={value}
         {...register}
+        onChange={onChange}
+        accept={accept}
       />
       <p className={styles.error} role="alert">
         {errorMessage}

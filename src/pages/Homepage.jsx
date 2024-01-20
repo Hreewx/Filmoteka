@@ -2,8 +2,10 @@ import { NavLink } from "react-router-dom";
 import Button from "../shared/ui/Button";
 import SliderHome from "../widgets/SliderHome/SliderHome";
 import styles from "./Homepage.module.scss";
+import { getMovies } from "../shared/api/apiFilms";
 
 function Homepage() {
+  getMovies();
   return (
     <section className={styles.home}>
       <div className={styles.home__left}>
@@ -14,7 +16,7 @@ function Homepage() {
           comments with your friends!
         </p>
         <NavLink to="/registration">
-          <Button />
+          <Button variant={"solid"}>Begin!</Button>
         </NavLink>
       </div>
       <div className={styles.home__right}>

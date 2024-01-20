@@ -1,0 +1,19 @@
+@import "../../app/styles/index.scss";
+
+.infoRow {
+  display: grid;
+  grid-template-columns: 20rem 1fr 15rem;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+
+  & label {
+    color: $primary-white-color;
+  }
+}
+
+.infoRow:has(button) {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
