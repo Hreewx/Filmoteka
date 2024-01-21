@@ -1,0 +1,5 @@
+@import "../app/styles/index.scss";
+
+.container {
+  @include container;
+}

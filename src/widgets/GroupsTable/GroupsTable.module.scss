@@ -1,0 +1,7 @@
+@import "../../app/styles/index.scss";
+
+.groupsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+}

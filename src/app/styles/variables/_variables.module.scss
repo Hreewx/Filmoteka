@@ -5,8 +5,16 @@ $primary-navy-color: #1d4964;
 $error-color: #df0237;
 $success-color: #047453;
 
+$letter-spacing-small: 0.2rem;
+
 $gradient: linear-gradient(
   90deg,
   $primary-black-color 25%,
   $primary-purple-color
 );
+
+@mixin container {
+  background: $gradient;
+  padding: 5rem;
+  height: 84vh;
+}

@@ -3,6 +3,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
 
+import "./styles/index.scss";
+
 import Login from "../pages/Login";
 import Registration from "../pages/Registration";
 import PageNotFound from "../pages/PageNotFound";
@@ -10,8 +12,12 @@ import AppLayout from "../widgets/AppLayout/AppLayout";
 import Dashboard from "../pages/Dashboard";
 import Homepage from "../pages/Homepage";
 import About from "../pages/About";
-
-import "./styles/index.scss";
+import CreateGroup from "../pages/CreateGroup";
+import Profile from "../pages/Profile";
+import GroupInfo from "../pages/GroupInfo";
+import Statistics from "../pages/Statistics";
+import Links from "../pages/Links";
+import NewReview from "../pages/NewReview";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -36,8 +42,18 @@ const router = createBrowserRouter([
       },
 
       {
+        path: "/profile",
+        element: <Profile />,
+      },
+
+      {
         path: "/about",
         element: <About />,
+      },
+
+      {
+        path: "/links",
+        element: <Links />,
       },
 
       {
@@ -48,6 +64,26 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard />,
+      },
+
+      {
+        path: "/dashboard/creategroup",
+        element: <CreateGroup />,
+      },
+
+      {
+        path: "/dashboard/:groupId",
+        element: <GroupInfo />,
+      },
+
+      {
+        path: "/dashboard/:groupId/new-review",
+        element: <NewReview />,
+      },
+
+      {
+        path: "/dashboard/:groupId/statistics",
+        element: <Statistics />,
       },
 
       {

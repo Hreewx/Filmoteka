@@ -1,0 +1,32 @@
+@import "../app/styles/index.scss";
+
+.container {
+  background: $gradient;
+  padding: 5rem;
+
+  & h1 {
+    text-align: center;
+    color: $primary-white-color;
+    letter-spacing: $letter-spacing-small;
+    margin-bottom: 2rem;
+  }
+}
+
+.profileContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.info {
+  margin: 0 auto;
+
+  & h2 {
+    color: $primary-white-color;
+    letter-spacing: $letter-spacing-small;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}

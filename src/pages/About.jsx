@@ -6,22 +6,20 @@ function About() {
       <div className={styles.about__container}>
         <h2>About Filmoteka</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-          quod, ex a sint sit ratione dolor distinctio assumenda similique vero,
-          voluptate minima impedit eligendi, expedita harum excepturi nisi
-          obcaecati perferendis.
+          Filmoteka was created as an improvement on the usual Google Sheets,
+          where my friends and I rated films we watched together.
         </p>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta,
-          modi? Sed dolor quos vel dolorum minima facilis quia veniam,
-          laboriosam necessitatibus, sequi officia numquam doloremque
-          consequatur maxime perferendis velit est?
+          This was not always convenient due to the specifics of creating tables
+          with watched films. Thus, Filmoteka was invented: an application for
+          assigning ratings, comments and personal descriptions for each film
+          watched.
         </p>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-          maiores. Adipisci sit deserunt temporibus debitis eos commodi magni
-          amet reiciendis, nesciunt impedit odio cum quo molestiae? Omnis
-          exercitationem doloremque eum.
+          Team up with friends and create groups to rate movies you have seen
+          with a big company and leave ratings and comments that you think best
+          suit each movie! Each person has their own profile with the number of
+          films watched, as well as the average rating for all films.
         </p>
       </div>
     </section>
