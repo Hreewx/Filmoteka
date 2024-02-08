@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
-import { useCreateGroup } from "../shared/utils/hooks/useCreateGroup";
+import { useCreateGroup } from "../shared/utils/hooks/groups/useCreateGroup";
 
 import ButtonForm from "../shared/ui/ButtonForm";
 import InputForm from "../shared/ui/InputForm";
 import Textarea from "../shared/ui/Textarea";
+
 import styles from "./CreateGroup.module.scss";
 
 function CreateGroup() {

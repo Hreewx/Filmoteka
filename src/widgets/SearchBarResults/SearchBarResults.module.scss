@@ -1,0 +1,12 @@
+@import "../../app/styles/index.scss";
+
+.resultsList {
+  color: $primary-black-color;
+  background-color: $primary-white-color;
+  margin-top: 2rem;
+  border-radius: 5px;
+  max-height: 20rem;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}

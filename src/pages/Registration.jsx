@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useSignup } from "../shared/utils/hooks/useSignup";
+import { useSignup } from "../shared/utils/hooks/authentication/useSignup";
 
 import ButtonForm from "../shared/ui/ButtonForm";
 import styles from "./Registration.module.scss";

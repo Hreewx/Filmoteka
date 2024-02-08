@@ -1,0 +1,45 @@
+@import "../app/styles/index.scss";
+
+.container {
+  @include container;
+  position: relative;
+}
+
+.movieContainer {
+  padding: 2rem;
+  width: 100rem;
+  margin: 0 auto;
+  display: flex;
+  gap: 4rem;
+  background-color: $primary-white-color;
+}
+
+.imageContainer {
+  & img {
+    width: 35rem;
+    height: 50rem;
+  }
+}
+
+.movieInfo {
+  & h1 {
+    margin-bottom: 2rem;
+  }
+  & h2 {
+    margin-bottom: 2rem;
+  }
+}
+
+.movieRow {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  & .title {
+    width: 16rem;
+  }
+
+  & .value {
+    width: fit-content;
+  }
+}

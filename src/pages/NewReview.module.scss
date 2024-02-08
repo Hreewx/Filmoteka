@@ -1,1 +1,22 @@
 @import "../app/styles/index.scss";
+
+.container {
+  @include container;
+
+  & h1 {
+    text-align: center;
+    color: $primary-white-color;
+    margin-bottom: 2rem;
+  }
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.inputWrapper {
+  height: 8rem;
+}

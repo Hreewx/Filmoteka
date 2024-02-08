@@ -1,0 +1,28 @@
+@import "../../app/styles/index.scss";
+
+.movieRow {
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+
+  & img {
+    width: 6rem;
+    height: 8rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: $primary-grey-color;
+  }
+}
+
+.movieInfo {
+  & h3 {
+    margin-bottom: 2rem;
+  }
+
+  & div {
+    display: flex;
+    gap: 2rem;
+  }
+}

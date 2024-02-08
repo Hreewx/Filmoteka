@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import { useLogin } from "../shared/utils/hooks/useLogin";
+import { useLogin } from "../shared/utils/hooks/authentication/useLogin";
 
 import styles from "./Login.module.scss";
 import ButtonForm from "../shared/ui/ButtonForm";

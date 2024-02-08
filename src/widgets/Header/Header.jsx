@@ -4,7 +4,7 @@ import SearchBarHeader from "../../shared/ui/SearchBarHeader";
 
 import styles from "./Header.module.scss";
 
-import { useUser } from "../../shared/utils/hooks/useUser";
+import { useUser } from "../../shared/utils/hooks/user/useUser";
 
 function Header() {
   const { isAuthenticated } = useUser();

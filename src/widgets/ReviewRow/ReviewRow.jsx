@@ -1,23 +1,36 @@
+import Button from "../../shared/ui/Button";
+import { useDeleteReview } from "../../shared/utils/hooks/reviews/useDeleteReview";
 import styles from "./ReviewRow.module.scss";
 
-function ReviewRow() {
+function ReviewRow({ review }) {
+  const { id, name, overview, poster, rating, who_watched } = review;
+
+  const { deleteReview, isDeleting } = useDeleteReview();
+
+  function handleDeleteReview(id) {
+    deleteReview(id);
+  }
+
   return (
     <div className={styles.reviewRow}>
       <div>
         <img src="/images/blade-runner.webp" />
+        {poster}
       </div>
-      <div>Blade Runner</div>
+      <div>{name}</div>
       <div>
-        <div>
-          Ryan Gosling is the best actor of all time and ever will be omg i love
-          ryan gosling and his role in film Barbie
-        </div>
+        <div>{overview}</div>
       </div>
       <div>
-        <div>Hreewx, Lenix, F3rry, Milo, Dudoit</div>
+        <div>{who_watched}</div>
       </div>
       <div>
-        <div>7/10</div>
+        <div>{rating}</div>
+      </div>
+      <div>
+        <Button disabled={isDeleting} onClick={() => handleDeleteReview(id)}>
+          Delete review
+        </Button>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { useGroups } from "../../shared/utils/hooks/useGroups";
+import { useGroups } from "../../shared/utils/hooks/groups/useGroups";
 
 import Spinner from "../../shared/ui/Spinner";
 import Group from "../Group/Group";
