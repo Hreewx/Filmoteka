@@ -2,4 +2,13 @@
 
 .container {
   @include container;
+
+  & h1 {
+    color: $primary-white-color;
+    letter-spacing: $letter-spacing-small;
+    text-align: center;
+  }
+  & p {
+    color: $primary-white-color;
+  }
 }

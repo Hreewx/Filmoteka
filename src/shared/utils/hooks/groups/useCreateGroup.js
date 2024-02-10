@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
-import { createGroup as createGroupApi } from "../../api/apiGroups";
+import { createGroup as createGroupApi } from "../../../api/apiGroups";
 
 import toast from "react-hot-toast";
 

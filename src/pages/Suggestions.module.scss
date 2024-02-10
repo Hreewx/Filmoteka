@@ -1,0 +1,14 @@
+@import "../app/styles/index.scss";
+
+.container {
+  padding: 5rem;
+  min-height: 84vh;
+  background: $gradient;
+
+  & h1 {
+    color: $primary-white-color;
+    letter-spacing: $letter-spacing-small;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}

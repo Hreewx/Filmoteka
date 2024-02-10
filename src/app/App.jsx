@@ -18,6 +18,8 @@ import GroupInfo from "../pages/GroupInfo";
 import Statistics from "../pages/Statistics";
 import Links from "../pages/Links";
 import NewReview from "../pages/NewReview";
+import Suggestions from "../pages/Suggestions";
+import Movie from "../pages/Movie";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -84,6 +86,16 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/:groupId/statistics",
         element: <Statistics />,
+      },
+
+      {
+        path: "/dashboard/:groupId/suggestions",
+        element: <Suggestions />,
+      },
+
+      {
+        path: "/movie/:movieId",
+        element: <Movie />,
       },
 
       {

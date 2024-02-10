@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useUpdateUser } from "../../shared/utils/hooks/useUpdateUser";
-import { useUser } from "../../shared/utils/hooks/useUser";
+import { useUpdateUser } from "../../shared/utils/hooks/user/useUpdateUser";
+import { useUser } from "../../shared/utils/hooks/user/useUser";
 
 import Button from "../../shared/ui/Button";
 import InputForm from "../../shared/ui/InputForm";

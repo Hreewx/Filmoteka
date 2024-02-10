@@ -1,4 +1,4 @@
-import { useUpdateUser } from "../shared/utils/hooks/useUpdateUser";
+import { useUpdateUser } from "../shared/utils/hooks/user/useUpdateUser";
 
 import styles from "./Profile.module.scss";
 

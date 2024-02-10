@@ -1,8 +1,9 @@
 import { useForm } from "react-hook-form";
+import { useUpdateUser } from "../../shared/utils/hooks/user/useUpdateUser";
+
 import Button from "../../shared/ui/Button";
 import InputForm from "../../shared/ui/InputForm";
 import styles from "./ProfileUserPassword.module.scss";
-import { useUpdateUser } from "../../shared/utils/hooks/useUpdateUser";
 
 function ProfileUserPassword() {
   const { register, handleSubmit, formState, getValues, reset } = useForm();

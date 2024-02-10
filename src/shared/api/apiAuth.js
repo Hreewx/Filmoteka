@@ -73,11 +73,3 @@ export async function updateCurrentUser({ password, avatar }) {
 
   return updatedUser;
 }
-
-export async function getAllUsers() {
-  const { data, error } = await supabase.from("auth.users").select("*");
-
-  if (error) throw new Error(error.message);
-
-  return data;
-}

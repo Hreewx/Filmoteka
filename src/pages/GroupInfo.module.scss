@@ -1,28 +1,39 @@
 @import "../app/styles/index.scss";
 
 .container {
-  @include container;
+  background: $gradient;
+  padding: 5rem;
+  min-height: 84vh;
+
+  & h1 {
+    text-align: center;
+    color: $primary-white-color;
+    margin-bottom: 4rem;
+  }
+}
+
+.reviewsContainer {
+  & h2 {
+    text-align: center;
+    color: $primary-white-color;
+    margin-top: 20rem;
+  }
 }
 
 .buttonsContainer {
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .header {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   color: $primary-white-color;
+  margin-bottom: 2rem;
 
   & div {
     margin: 0 auto;
-  }
-}
-
-.filmsWatched {
-  & p {
-    color: $primary-white-color;
   }
 }

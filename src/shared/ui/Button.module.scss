@@ -3,7 +3,7 @@
 .button {
   width: 15rem;
   height: 5rem;
-  border: none;
+  border: 1px solid $primary-white-color;
   background-color: $primary-purple-color;
   border-radius: 10px;
   -webkit-border-radius: 10px;

@@ -29,3 +29,13 @@ export async function getGroup(id) {
 
   return data;
 }
+
+export async function deleteGroup(id) {
+  const { data, error } = await supabase.from("groups").delete().eq("id", id);
+
+  if (error) {
+    console.error(error);
+    throw new Error("Group could not be deleted");
+  }
+  return data;
+}

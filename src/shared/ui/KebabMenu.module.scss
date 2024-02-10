@@ -1,0 +1,27 @@
+@import "../../app/styles/index.scss";
+
+.kebabMenu {
+  cursor: pointer;
+  position: relative;
+  width: 1.2rem;
+}
+
+.list {
+  position: absolute;
+  border-radius: 0.5rem;
+  right: 0;
+  width: 10rem;
+  background-color: $primary-white-color;
+
+  & p {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.3rem;
+    color: $primary-black-color;
+
+    &:hover {
+      background-color: $primary-grey-color;
+    }
+  }
+}

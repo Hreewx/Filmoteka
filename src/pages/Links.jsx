@@ -1,6 +1,7 @@
 import styles from "./Links.module.scss";
 
 import { IoLogoGithub } from "react-icons/io5";
+import { FaTelegram } from "react-icons/fa";
 
 function Links() {
   return (
@@ -14,6 +15,10 @@ function Links() {
             <IoLogoGithub className={styles.icon} />
             <button className={styles.link}>Github</button>
           </div>
+          <div className={styles.linksContainer}>
+            <FaTelegram className={styles.icon} />
+            <button className={styles.link}>Telegram</button>
+          </div>
         </div>
         <div className={styles.person}>
           <img src="/images/hreewx-avatar.jpeg" alt="Milo" />
@@ -21,6 +26,10 @@ function Links() {
           <div className={styles.linksContainer}>
             <IoLogoGithub className={styles.icon} />
             <button className={styles.link}>Github</button>
+          </div>
+          <div className={styles.linksContainer}>
+            <FaTelegram className={styles.icon} />
+            <button className={styles.link}>Telegram</button>
           </div>
         </div>
       </div>

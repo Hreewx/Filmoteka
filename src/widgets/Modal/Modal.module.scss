@@ -1,0 +1,46 @@
+@import "../../app/styles/index.scss";
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+}
+
+.modalContent {
+  background-color: $primary-black-color;
+  position: relative;
+  color: $primary-white-color;
+  margin: 10% auto;
+  padding: 2rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  overflow-y: scroll;
+
+  & h3 {
+    text-align: center;
+  }
+}
+
+.opened {
+  display: block;
+}
+
+.closed {
+  display: none;
+}
+
+.iconClose {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2.3rem;
+  cursor: pointer;
+}

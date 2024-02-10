@@ -1,11 +1,19 @@
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "../shared/ui/Button";
 import SliderHome from "../widgets/SliderHome/SliderHome";
 import styles from "./Homepage.module.scss";
-import { getMovies } from "../shared/api/apiFilms";
+import { useUser } from "../shared/utils/hooks/user/useUser";
 
 function Homepage() {
-  getMovies();
+  const navigate = useNavigate();
+  const { isAuthenticated } = useUser();
+
+  function handleClick() {
+    if (isAuthenticated) {
+      navigate("/dashboard");
+    } else navigate("/registration");
+  }
+
   return (
     <section className={styles.home}>
       <div className={styles.home__left}>
@@ -15,9 +23,10 @@ function Homepage() {
           large company. Choose a movie you watched and leave ratings and
           comments with your friends!
         </p>
-        <NavLink to="/registration">
-          <Button variant={"solid"}>Begin!</Button>
-        </NavLink>
+
+        <Button onClick={handleClick} variant={"solid"}>
+          Begin!
+        </Button>
       </div>
       <div className={styles.home__right}>
         <SliderHome />
