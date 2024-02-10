@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useGroups } from "../shared/utils/hooks/groups/useGroups";
 
-import styles from "./Movie.module.scss";
+import MovieInfoRow from "../widgets/MovieInfoRow/MovieInfoRow";
 import Button from "../shared/ui/Button";
 import Modal from "../widgets/Modal/Modal";
 
-import { useGroups } from "../shared/utils/hooks/groups/useGroups";
+import styles from "./Movie.module.scss";
 
 const API_MOVIE_KEY = "7d644d60-e7a0-4b79-bd5a-60f4a4cb6a85";
 
@@ -77,34 +78,12 @@ function Movie() {
           </div>
           <h2>About film</h2>
           <div className={styles.movieData}>
-            <div className={styles.movieRow}>
-              <div className={styles.title}>Production year</div>
-              <div className={styles.value}>{year}</div>
-            </div>
-            <div className={styles.movieRow}>
-              <div className={styles.title}>Slogan</div>
-              <div className={styles.value}>{slogan}</div>
-            </div>
-            <div className={styles.movieRow}>
-              <div className={styles.title}>Imdb rating</div>
-              <div className={styles.value}>{ratingImdb}</div>
-            </div>
-            <div className={styles.movieRow}>
-              <div className={styles.title}>Kinopoisk rating</div>
-              <div className={styles.value}>{ratingKinopoisk}</div>
-            </div>
-            <div className={styles.movieRow}>
-              <div className={styles.title}>Film length</div>
-              <div className={styles.value}>{filmLength} min</div>
-            </div>
-            <div className={styles.movieRow}>
-              <div className={styles.title}>Film length</div>
-              <div className={styles.value}>{filmLength} min</div>
-            </div>
-            <div className={styles.movieRow}>
-              <div className={styles.title}>Certificate</div>
-              <div className={styles.value}>{ratingAgeLimits}</div>
-            </div>
+            <MovieInfoRow>Production year {year}</MovieInfoRow>
+            <MovieInfoRow>Slogan {slogan}</MovieInfoRow>
+            <MovieInfoRow>Imdb Rating {ratingImdb}</MovieInfoRow>
+            <MovieInfoRow>Kinopoisk Rating {ratingKinopoisk}</MovieInfoRow>
+            <MovieInfoRow>Film length {`${filmLength} min`}</MovieInfoRow>
+            <MovieInfoRow>Certificate {ratingAgeLimits}</MovieInfoRow>
           </div>
         </div>
       </div>

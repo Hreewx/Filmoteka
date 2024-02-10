@@ -24,9 +24,7 @@ export async function getReviewsByGroupId(id) {
     .select("*")
     .eq("group_id", id);
 
-  if (error) {
-    throw new Error("Review could not be found");
-  }
+  if (error) throw new Error("Review could not be found");
 
   return data;
 }
@@ -34,9 +32,7 @@ export async function getReviewsByGroupId(id) {
 export async function deleteReview(id) {
   const { data, error } = await supabase.from("reviews").delete().eq("id", id);
 
-  if (error) {
-    console.error(error);
-    throw new Error("Review could not be deleted");
-  }
+  if (error) throw new Error("Review could not be deleted");
+
   return data;
 }

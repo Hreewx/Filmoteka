@@ -27,7 +27,6 @@ function Modal({ movie, open, setOpen }) {
     const check = suggestions.filter(
       (suggestion) => suggestion.movie_id === newSuggestion.movie_id
     );
-    console.log(check);
 
     for (let i = 0; i < check.length; i++) {
       if (check[i].group_id === id) {
