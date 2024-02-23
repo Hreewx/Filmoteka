@@ -13,7 +13,7 @@ function Profile() {
 
   return (
     <section className={styles.container}>
-      <h1>PROFILE</h1>
+      <h1>Профиль</h1>
       <div className={styles.profileContainer}>
         <ProfileAvatar />
         <div className={styles.info}>

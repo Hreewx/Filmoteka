@@ -9,7 +9,7 @@ export function useDeleteSuggestion() {
   const { isLoading: isDeleting, mutate: deleteSuggestion } = useMutation({
     mutationFn: deleteSuggestionApi,
     onSuccess: () => {
-      toast.success("Film was successfully deleted");
+      toast.success("Фильм удален из предложенных");
       queryClient.invalidateQueries({
         queryKey: ["suggestions"],
       });

@@ -21,17 +21,17 @@ function ProfileUserData() {
 
   return (
     <>
-      <h2>User Data</h2>
+      <h2>Информация о пользователе</h2>
       <div className={styles.infoRow}>
-        <label>Username</label>
+        <label>Имя пользователя</label>
         <InputForm type="text" value={login} disabled={true} />
       </div>
       <div className={styles.infoRow}>
-        <label>Email address</label>
+        <label>Адрес электронной почты</label>
         <InputForm type="text" value={email} disabled={true} />
       </div>
       <div className={styles.infoRow}>
-        <label>Avatar image</label>
+        <label>Аватар</label>
         <InputForm
           type="file"
           id="avatar"
@@ -41,7 +41,7 @@ function ProfileUserData() {
       </div>
       <div className={styles.infoRow}>
         <Button disabled={isUpdating} onClick={handleSubmit}>
-          Change user data
+          Обновить данные
         </Button>
       </div>
     </>

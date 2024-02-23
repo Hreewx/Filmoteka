@@ -3,10 +3,14 @@ import Button from "../shared/ui/Button";
 import SliderHome from "../widgets/SliderHome/SliderHome";
 import styles from "./Homepage.module.scss";
 import { useUser } from "../shared/utils/hooks/user/useUser";
+import { useGroupsMembers } from "../shared/utils/hooks/groups/useGroupsMembers";
 
 function Homepage() {
   const navigate = useNavigate();
   const { isAuthenticated } = useUser();
+  const { groups, isLoading } = useGroupsMembers();
+  if (isLoading) return;
+  console.log(groups);
 
   function handleClick() {
     if (isAuthenticated) {
@@ -17,15 +21,15 @@ function Homepage() {
   return (
     <section className={styles.home}>
       <div className={styles.home__left}>
-        <h1 className={styles.home__header}>Filmoteka</h1>
+        <h1 className={styles.home__header}>Фильмотека</h1>
         <p className={styles.home__text}>
-          Filmoteka is an application that was created to evaluate films in a
-          large company. Choose a movie you watched and leave ratings and
-          comments with your friends!
+          Фильмотека — приложение, которое создано для оценки фильмов в большой
+          компании. Выбирайте фильм, который вы посмотрели, и оставляйте оценки
+          и комментарии с друзьями!
         </p>
 
         <Button onClick={handleClick} variant={"solid"}>
-          Begin!
+          Начать!
         </Button>
       </div>
       <div className={styles.home__right}>

@@ -20,3 +20,15 @@
 .inputWrapper {
   height: 8rem;
 }
+
+.reviewContainer {
+  display: grid;
+  grid-template-columns: 50rem 50rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.posterContainer {
+  height: 50rem;
+  width: 40rem;
+}

@@ -21,7 +21,7 @@ function Login() {
 
   return (
     <section className={styles.container}>
-      <h2>Sign In</h2>
+      <h2>Войти в аккаунт</h2>
       <form onSubmit={handleSubmit}>
         <div className={styles.inputWrapper}>
           <input
@@ -38,19 +38,19 @@ function Login() {
           <input
             type="password"
             autoComplete="off"
-            placeholder="Password"
+            placeholder="Пароль"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             disabled={isPending}
           />
         </div>
 
-        <ButtonForm disabled={isPending}>Sign In</ButtonForm>
+        <ButtonForm disabled={isPending}>Войти</ButtonForm>
 
         <div className={styles.bottomContainer}>
-          <p>Dont have an account? </p>
+          <p>Нет аккаунта?</p>
           <NavLink to="/registration" className={styles.link}>
-            Sign Up!
+            Регистрация
           </NavLink>
         </div>
       </form>

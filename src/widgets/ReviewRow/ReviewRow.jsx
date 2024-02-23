@@ -29,7 +29,7 @@ function ReviewRow({ review }) {
       </div>
       <div>
         <Button disabled={isDeleting} onClick={() => handleDeleteReview(id)}>
-          Delete review
+          Удалить обзор
         </Button>
       </div>
     </div>

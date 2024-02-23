@@ -21,9 +21,9 @@ function ProfileAvatar() {
           alt={`Avatar of ${login}`}
         />
         <h2>{login}</h2>
-        <p>Number of films watched : 13</p>
-        <p>Average movie rating : 7.5</p>
-        <Button onClick={logout}>Log out</Button>
+        <p>Количество просмотренных фильмов : 13</p>
+        <p>Средняя оценка: 7.5</p>
+        <Button onClick={logout}>Выход</Button>
       </div>
     </>
   );

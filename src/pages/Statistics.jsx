@@ -18,14 +18,14 @@ function Statistics() {
 
   return (
     <section className={styles.container}>
-      <h1>Group statistics</h1>
-      <p>Users in group : {group.members}</p>
+      <h1>Статистика группы</h1>
+      <p>Участники: {group.members}</p>
       <p>
-        Average film score :{" "}
+        Средняя оценка:{" "}
         {!reviews.length ? 0 : (rating / reviews.length).toFixed(2)}
       </p>
-      <p>IQ of each user : </p>
-      <p>{reviews.length} films watched</p>
+      <p>IQ каждого участника: </p>
+      <p> Просмотрено {reviews.length} фильмов</p>
     </section>
   );
 }

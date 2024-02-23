@@ -37,20 +37,22 @@ function GroupInfo() {
         <>
           <h1>{group.name}</h1>
           <div className={styles.buttonsContainer}>
-            <Button onClick={handleCreateReview}>New review</Button>
-            <Button onClick={handleNavigateStat}>Group statistics</Button>
-            <Button onClick={handleNavigateSuggest}>Films to offer</Button>
+            <Button onClick={handleCreateReview}>Новый обзор</Button>
+            <Button onClick={handleNavigateStat}>Статистика</Button>
+            <Button onClick={handleNavigateSuggest}>Предложенные фильмы</Button>
           </div>
           <div className={styles.reviewsContainer}>
             {!reviews.length ? (
-              <h2>No reviews found yet. Start by creating one!</h2>
+              <h2>
+                Вы еще не написали ни одного отзыва. Создайте свой первый!
+              </h2>
             ) : (
               <div className={styles.header}>
-                <div>Poster</div>
-                <div>Name</div>
-                <div>Overview</div>
-                <div>Who watched</div>
-                <div>Rating</div>
+                <div>Постер</div>
+                <div>Название</div>
+                <div>Описание</div>
+                <div>Кто смотрел</div>
+                <div>Оценка</div>
               </div>
             )}
             {reviews.map((review) => (

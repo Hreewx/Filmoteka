@@ -15,14 +15,14 @@ function NavBar({ isAuthenticated }) {
       <ul className={styles.navlist}>
         {isAuthenticated ? (
           <NavLink className={styles.link} to="/dashboard">
-            Dashboard
+            Главная
           </NavLink>
         ) : null}
         <NavLink className={styles.link} to="/about">
-          About
+          О проекте
         </NavLink>
         <NavLink className={styles.link} to="/links">
-          Links
+          Ссылки
         </NavLink>
 
         {isAuthenticated ? (
@@ -37,7 +37,7 @@ function NavBar({ isAuthenticated }) {
           </HiOutlineUser>
         ) : (
           <NavLink className={`${styles.link} ${styles.dropdown}`} to="/login">
-            Log In
+            Вход
           </NavLink>
         )}
       </ul>

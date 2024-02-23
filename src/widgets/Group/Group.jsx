@@ -22,12 +22,12 @@ function Group({ group }) {
   return (
     <div className={styles.group}>
       <h2>{name}</h2>
-      <p>Group Partisipants: {members}</p>
-      <p>Number of reviews: {reviews ? reviews : 0}</p>
-      <p>Group Overview : {description}</p>
+      <p>Участники: {members}</p>
+      <p>Количество отзывов: {reviews ? reviews : 0}</p>
+      <p>Описание: {description}</p>
       <div className={styles.buttonsContainer}>
-        <Button onClick={handleClick}>See More</Button>
-        <Button onClick={handleDeleteGroup}>Delete group</Button>
+        <Button onClick={handleClick}>Подробнее</Button>
+        <Button onClick={handleDeleteGroup}>Удалить</Button>
       </div>
     </div>
   );

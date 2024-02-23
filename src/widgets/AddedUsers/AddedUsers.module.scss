@@ -1,0 +1,27 @@
+@import "../../app/styles/index.scss";
+
+.usernameContainer {
+  background-color: $primary-white-color;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  padding: 1rem;
+  display: flex;
+  width: 30rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  border: 1px solid $primary-purple-color;
+  border-radius: 1rem;
+}
+
+.icon {
+  cursor: pointer;
+  font-size: 2rem;
+}

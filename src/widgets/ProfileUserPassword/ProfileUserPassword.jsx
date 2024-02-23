@@ -16,14 +16,14 @@ function ProfileUserPassword() {
   }
   return (
     <>
-      <h2>Update password</h2>
+      <h2>Изменить пароль</h2>
       <div className={styles.infoRow}>
-        <label>New password</label>
+        <label>Новый пароль</label>
         <InputForm
           id="password"
           type="password"
           autoComplete="false"
-          placeholder="New password"
+          placeholder="Новый пароль"
           disabled={isUpdating}
           register={{
             ...register("password", {
@@ -38,12 +38,12 @@ function ProfileUserPassword() {
         />
       </div>
       <div className={styles.infoRow}>
-        <label>Update password</label>
+        <label>Повторите пароль</label>
         <InputForm
           id="passwordConfirm"
           type="password"
           autoComplete="false"
-          placeholder="Repeat password"
+          placeholder="Повторите пароль"
           disabled={isUpdating}
           register={{
             ...register("passwordConfirm", {
@@ -58,7 +58,7 @@ function ProfileUserPassword() {
 
       <div className={styles.infoRow}>
         <Button onClick={handleSubmit(handleUpdate)} disabled={isUpdating}>
-          Update password
+          Обновить пароль
         </Button>
       </div>
     </>

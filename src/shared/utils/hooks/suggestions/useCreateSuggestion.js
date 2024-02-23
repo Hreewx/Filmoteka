@@ -10,7 +10,7 @@ export function useCreateSuggestion() {
     mutationFn: createSuggestionApi,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["suggestions"] });
-      toast.success("Film is added to suggestions");
+      toast.success("Фильм добавлен в предложенные");
     },
     onError: (err) => toast.error(err.message),
   });

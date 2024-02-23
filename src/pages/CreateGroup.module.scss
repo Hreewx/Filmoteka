@@ -22,3 +22,16 @@
   align-items: center;
   flex-direction: column;
 }
+.profileNames {
+  width: 100%;
+  background-color: $primary-white-color;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.user {
+  cursor: pointer;
+  &:hover {
+    background-color: $primary-grey-color;
+  }
+}
