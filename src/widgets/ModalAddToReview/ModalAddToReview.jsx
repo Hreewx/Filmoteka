@@ -2,7 +2,6 @@ import { useCreateSuggestion } from "../../shared/utils/hooks/suggestions/useCre
 import { useGroups } from "../../shared/utils/hooks/groups/useGroups";
 import { IoMdCloseCircle } from "react-icons/io";
 import { useGetSuggestions } from "../../shared/utils/hooks/suggestions/useGetSuggestions";
-import { useNavigate } from "react-router-dom";
 
 import Button from "../../shared/ui/Button";
 import Spinner from "../../shared/ui/Spinner";
@@ -10,19 +9,17 @@ import styles from "./Modal.module.scss";
 
 import toast from "react-hot-toast";
 
-function Modal({ movie, open, setOpen, buttonId }) {
+function ModalAddToReview({ movie, open, setOpen }) {
   const { isLoading, groups } = useGroups();
   const { isAdding, createSuggestion } = useCreateSuggestion();
   const { suggestions } = useGetSuggestions();
-
-  const navigate = useNavigate();
 
   if (isLoading) return <Spinner />;
 
   function handleAddMovie(id) {
     const newSuggestion = {
       posterUrl: movie.posterUrl,
-      nameOriginal: movie.nameRu,
+      nameOriginal: movie.nameOriginal,
       movie_id: movie.kinopoiskId,
       group_id: id,
     };
@@ -33,22 +30,13 @@ function Modal({ movie, open, setOpen, buttonId }) {
 
     for (let i = 0; i < check.length; i++) {
       if (check[i].group_id === id) {
-        toast.error("Фильм уже добавлен");
+        toast.error("Movie is already added");
         return;
       }
     }
 
     createSuggestion({ ...newSuggestion });
     setOpen((prev) => !prev);
-  }
-
-  function handleAddReview(id) {
-    navigate(`/dashboard/${id}/new-review`, {
-      state: {
-        poster: movie.posterUrl,
-        movieName: movie.nameRu,
-      },
-    });
   }
 
   function handleCloseModal() {
@@ -62,13 +50,10 @@ function Modal({ movie, open, setOpen, buttonId }) {
           className={styles.iconClose}
           onClick={handleCloseModal}
         />
-        <h3>Выбрать группу</h3>
+        <h3>Choose a group to add to</h3>
         {groups.map((group) => (
           <Button
-            onClick={() => {
-              if (buttonId === 1) handleAddMovie(group.id);
-              else if (buttonId === 2) handleAddReview(group.id);
-            }}
+            onClick={() => handleAddMovie(group.id)}
             key={group.id}
             disabled={isAdding}
           >
@@ -80,4 +65,4 @@ function Modal({ movie, open, setOpen, buttonId }) {
   );
 }
 
-export default Modal;
+export default ModalAddToReview;

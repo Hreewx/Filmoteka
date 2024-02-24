@@ -24,14 +24,14 @@ function Registration() {
 
   return (
     <section className={styles.container}>
-      <h2>Sign Up</h2>
+      <h2>Создайте аккаунт</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputWrapper}>
           <InputForm
             type="text"
             id="login"
             autoComplete="off"
-            placeholder="Login"
+            placeholder="Логин"
             disabled={isPending}
             register={{
               ...register("login", {
@@ -71,7 +71,7 @@ function Registration() {
             type="password"
             id="password"
             autoComplete="off"
-            placeholder="Password"
+            placeholder="Пароль"
             disabled={isPending}
             register={{
               ...register("password", {
@@ -91,7 +91,7 @@ function Registration() {
             type="password"
             id="passwordConfirm"
             autoComplete="off"
-            placeholder="Repeat password"
+            placeholder="Повторите пароль"
             disabled={isPending}
             register={{
               ...register("passwordConfirm", {
@@ -104,12 +104,12 @@ function Registration() {
           />
         </div>
 
-        <ButtonForm disabled={isPending}>Sign Up</ButtonForm>
+        <ButtonForm disabled={isPending}>Зарегистрироваться</ButtonForm>
 
         <div className={styles.bottomContainer}>
-          <p>Already have an account? </p>
+          <p>Уже есть аккаунт? </p>
           <NavLink to="/login" className={styles.link}>
-            Sign In!
+            Войти!
           </NavLink>
         </div>
       </form>

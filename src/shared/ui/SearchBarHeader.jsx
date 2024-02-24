@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useMovies } from "../utils/hooks/movies/useMovies";
 
 import styles from "./SearchBarHeader.module.scss";
@@ -8,9 +8,29 @@ import SearchBarResults from "../../widgets/SearchBarResults/SearchBarResults";
 function SearchBarHeader() {
   const [query, setQuery] = useState("");
   const { movies } = useMovies(query);
+  const searchMovieRef = useRef();
+  const [open, setOpen] = useState(false);
+
+  function callbackToSetQuery(data) {
+    setQuery(data);
+  }
+
+  useEffect(function () {
+    function handler(e) {
+      if (!searchMovieRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
 
   function handleChange(e) {
     setQuery(e.target.value);
+    if (query.length > 1) setOpen(true);
   }
 
   return (
@@ -19,11 +39,18 @@ function SearchBarHeader() {
         <input
           className={styles.searchBar}
           type="text"
-          placeholder="Search for a group, user or film!"
+          placeholder="Поиск по фильмам"
+          value={query}
           onChange={handleChange}
         />
-        <div className={styles.movieSearch}>
-          <SearchBarResults movies={movies} />
+        <div className={styles.movieSearch} ref={searchMovieRef}>
+          {open && (
+            <SearchBarResults
+              movies={movies}
+              setOpen={setOpen}
+              callbackToSetQuery={callbackToSetQuery}
+            />
+          )}
         </div>
       </div>
     </>

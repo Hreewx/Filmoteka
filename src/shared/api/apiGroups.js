@@ -9,11 +9,46 @@ export async function getGroups() {
 }
 
 export async function createGroup(newGroup) {
-  const { data, error } = await supabase.from("groups").insert([newGroup]);
+  const { data, error } = await supabase.from("groups").insert(newGroup);
 
-  if (error) throw new Error("Group could not be created");
+  if (data && data.length > 0) {
+    const createdId = data[0].id;
+    console.log(createdId);
+    return data;
+  } else if (error) {
+    throw new Error("Group could not be created");
+  }
+}
 
-  return data;
+export async function createGroupWithMembers(newGroup, members) {
+  // Создаем запись в таблице "groups" и получаем ее id
+  const { data: groupData, error: groupError } = await supabase
+    .from("groups")
+    .insert([newGroup])
+    .select();
+
+  if (groupError) {
+    throw new Error("Ошибка при создании группы");
+  }
+
+  const groupId = groupData[0].id;
+
+  // Создаем массив объектов для вставки в таблицу "group_members" с корректными ссылками на созданную группу
+  const membersData = members.map((member) => {
+    return { ...member, groups_fk: groupId };
+  });
+  console.log(membersData);
+
+  // Вставляем связанные записи в таблицу "group_members"
+  const { data: membersInsertData, error: membersInsertError } = await supabase
+    .from("group_members")
+    .insert([...membersData]);
+
+  if (membersInsertError) {
+    throw new Error("Ошибка при создании участников группы");
+  }
+
+  return { groupId, membersInsertData };
 }
 
 export async function getGroup(id) {
@@ -37,5 +72,15 @@ export async function deleteGroup(id) {
     console.error(error);
     throw new Error("Group could not be deleted");
   }
+  return data;
+}
+
+export async function getGroupsMembers() {
+  const { data, error } = await supabase
+    .from("groups")
+    .select("*, group_members(*)");
+
+  if (error) throw new Error("Groups could not be loaded");
+
   return data;
 }

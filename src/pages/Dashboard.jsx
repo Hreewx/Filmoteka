@@ -8,7 +8,7 @@ function Dashboard() {
     <section className={styles.container}>
       <div className={styles.buttonsContainer}>
         <NavLink to="/dashboard/creategroup">
-          <Button>Create new group</Button>
+          <Button>Создать группу</Button>
         </NavLink>
       </div>
       <GroupsTable />

@@ -6,6 +6,7 @@ import styles from "./GroupsTable.module.scss";
 
 function GroupsTable() {
   const { isLoading, groups } = useGroups();
+  console.log(groups);
 
   if (isLoading) return <Spinner />;
 

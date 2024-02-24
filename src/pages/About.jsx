@@ -4,22 +4,21 @@ function About() {
   return (
     <section className={styles.about}>
       <div className={styles.about__container}>
-        <h2>About Filmoteka</h2>
+        <h2>О Фильмотеке</h2>
         <p>
-          Filmoteka was created as an improvement on the usual Google Sheets,
-          where my friends and I rated films we watched together.
+          Фильмотека была создана как усовершенствованная версия Google Таблиц,
+          в которых мы с друзьями оценивали просмотренные вместе фильмы.
         </p>
         <p>
-          This was not always convenient due to the specifics of creating tables
-          with watched films. Thus, Filmoteka was invented: an application for
-          assigning ratings, comments and personal descriptions for each film
-          watched.
+          Это не всегда было удобно из-за специфики такого формата. Так
+          появилась Фильмотека - приложение для выставления оценок и добавления
+          комментариев и личных описаний к каждому просмотренному фильму.
         </p>
         <p>
-          Team up with friends and create groups to rate movies you have seen
-          with a big company and leave ratings and comments that you think best
-          suit each movie! Each person has their own profile with the number of
-          films watched, as well as the average rating for all films.
+          Создавайте группы и приглашайте друзей, оценивайте фильмы, которые вы
+          посмотрели компанией, ставьте оценки и оставляйте к ним комментарии! У
+          каждого пользователя есть свой профиль с указанием количества
+          просмотренных фильмов и среднего рейтинга.
         </p>
       </div>
     </section>
