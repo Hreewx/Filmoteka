@@ -1,0 +1,15 @@
+@import "../../app/styles/index.scss";
+
+.footer {
+  padding: 2rem;
+  color: $primary-white-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}

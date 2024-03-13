@@ -1,15 +1,33 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./SearchBarMovie.module.scss";
 
-function SearchBarMovie({ movie, setOpen, callbackToSetQuery }) {
+function SearchBarMovie({
+  movie,
+  setOpen,
+  callbackToSetQuery,
+  withCustomHandler,
+  onSelectReviewMovie,
+}) {
   const { nameRu, posterUrl, rating, year, filmId } = movie;
 
   const navigate = useNavigate();
 
   function handleSelectMovie() {
-    navigate(`/movie/${filmId}`);
-    setOpen(false);
-    callbackToSetQuery("");
+    if (withCustomHandler) {
+      onSelectReviewMovie({
+        poster: posterUrl,
+        name: nameRu,
+        overview: "",
+        who_watched: "",
+        rating_by_user: "",
+        rating: "",
+        group_id: "",
+      });
+    } else {
+      navigate(`/movie/${filmId}`);
+      setOpen(false);
+      callbackToSetQuery("");
+    }
   }
 
   return (

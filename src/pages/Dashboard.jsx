@@ -1,15 +1,19 @@
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "../shared/ui/Button";
 import styles from "./Dashboard.module.scss";
 import GroupsTable from "../widgets/GroupsTable/GroupsTable";
 
 function Dashboard() {
+  const navigate = useNavigate();
+
+  function handleCreateGroup() {
+    navigate("/dashboard/creategroup");
+  }
+
   return (
     <section className={styles.container}>
       <div className={styles.buttonsContainer}>
-        <NavLink to="/dashboard/creategroup">
-          <Button>Создать группу</Button>
-        </NavLink>
+        <Button onClick={handleCreateGroup}>Создать группу</Button>
       </div>
       <GroupsTable />
     </section>

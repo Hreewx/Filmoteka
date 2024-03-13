@@ -67,42 +67,44 @@ function Movie() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.movieContainer}>
-        <div className={styles.imageContainer}>
-          <img src={posterUrl} alt="Poster" />
-        </div>
-        <div className={styles.movieInfo}>
-          <div className={styles.movieRow}>
-            <h1>{nameRu}</h1>
-            <Button
-              onClick={() => {
-                handleOpenModal();
-                handleSetButton(1);
-              }}
-            >
-              Предложить фильм
-            </Button>
-            <Button
-              onClick={() => {
-                handleOpenModal();
-                handleSetButton(2);
-              }}
-            >
-              Оставить отзыв
-            </Button>
+      <div className={styles.movieWrapper}>
+        <div className={styles.movieContainer}>
+          <div className={styles.imageContainer}>
+            <img src={posterUrl} alt="Poster" />
           </div>
-          <h2>Информация о фильме</h2>
-          <div className={styles.movieData}>
-            <MovieInfoRow>Год производства {year || "-"}</MovieInfoRow>
-            <MovieInfoRow>Слоган {slogan || "-"}</MovieInfoRow>
-            <MovieInfoRow>Рейтинг Imdb {ratingImdb || "-"}</MovieInfoRow>
-            <MovieInfoRow>
-              Рейтинг Kinopoisk {ratingKinopoisk || "-"}
-            </MovieInfoRow>
-            <MovieInfoRow>
-              Продолжительность{`${filmLength} минут` || "-"}
-            </MovieInfoRow>
-            <MovieInfoRow>Возраст {ratingAgeLimits || "-"}</MovieInfoRow>
+          <div className={styles.movieInfo}>
+            <h1>{nameRu}</h1>
+            <h2>Информация о фильме</h2>
+            <div className={styles.movieData}>
+              <MovieInfoRow>Год производства {year || "-"}</MovieInfoRow>
+              <MovieInfoRow>Слоган {slogan || "-"}</MovieInfoRow>
+              <MovieInfoRow>Рейтинг Imdb {ratingImdb || "-"}</MovieInfoRow>
+              <MovieInfoRow>
+                Рейтинг Kinopoisk {ratingKinopoisk || "-"}
+              </MovieInfoRow>
+              <MovieInfoRow>
+                Продолжительность{`${filmLength} минут` || "-"}
+              </MovieInfoRow>
+              <MovieInfoRow>Возраст {ratingAgeLimits || "-"}</MovieInfoRow>
+            </div>
+            <div className={styles.buttons}>
+              <Button
+                onClick={() => {
+                  handleOpenModal();
+                  handleSetButton(1);
+                }}
+              >
+                Предложить фильм
+              </Button>
+              <Button
+                onClick={() => {
+                  handleOpenModal();
+                  handleSetButton(2);
+                }}
+              >
+                Оставить отзыв
+              </Button>
+            </div>
           </div>
         </div>
       </div>

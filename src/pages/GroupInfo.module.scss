@@ -13,6 +13,9 @@
 }
 
 .reviewsContainer {
+  border: 1px solid $primary-white-color;
+  border-radius: 1rem;
+
   & h2 {
     text-align: center;
     color: $primary-white-color;
@@ -20,18 +23,25 @@
   }
 }
 
-.buttonsContainer {
+.groupActions {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 2rem;
   margin-bottom: 4rem;
+
+  & .buttonsContainer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
 }
 
 .header {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   color: $primary-white-color;
-  margin-bottom: 2rem;
+  padding: 2rem;
+  border-bottom: 1px solid $primary-white-color;
 
   & div {
     margin: 0 auto;

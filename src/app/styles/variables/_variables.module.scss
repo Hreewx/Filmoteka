@@ -4,6 +4,11 @@ $primary-purple-color: #8c3be5;
 $primary-navy-color: #1d4964;
 $primary-grey-color: #d7d8dd;
 
+$secondary-purple-color: #c08ae1;
+$secondary-cian-color: #24e7db;
+
+$group-background-color: #160533;
+
 $error-color: #df0237;
 $success-color: #047453;
 
@@ -13,6 +18,12 @@ $gradient: linear-gradient(
   90deg,
   $primary-black-color 25%,
   $primary-purple-color
+);
+
+$group-gradient: linear-gradient(
+  to top right,
+  $secondary-purple-color,
+  $secondary-cian-color
 );
 
 @mixin container {

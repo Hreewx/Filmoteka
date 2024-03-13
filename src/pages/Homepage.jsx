@@ -3,14 +3,10 @@ import Button from "../shared/ui/Button";
 import SliderHome from "../widgets/SliderHome/SliderHome";
 import styles from "./Homepage.module.scss";
 import { useUser } from "../shared/utils/hooks/user/useUser";
-import { useGroupsMembers } from "../shared/utils/hooks/groups/useGroupsMembers";
 
 function Homepage() {
   const navigate = useNavigate();
   const { isAuthenticated } = useUser();
-  const { groups, isLoading } = useGroupsMembers();
-  if (isLoading) return;
-  console.log(groups);
 
   function handleClick() {
     if (isAuthenticated) {

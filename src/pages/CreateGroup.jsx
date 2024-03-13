@@ -99,6 +99,7 @@ function CreateGroup() {
             type="text"
             id="members"
             autoComplete="off"
+            value={name}
             onChange={handleChangeValue}
             placeholder="Добавить друзей по их логину"
             // register={{
