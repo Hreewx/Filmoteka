@@ -84,3 +84,14 @@ export async function getGroupsMembers() {
 
   return data;
 }
+
+export async function updateGroupMembers(id, iq) {
+  const { data, error } = await supabase
+    .from("group_members")
+    .update({ iq: iq + 1 })
+    .eq("id", id);
+
+  if (error) throw new Error("Участники не могут быть обновлены");
+
+  return data;
+}

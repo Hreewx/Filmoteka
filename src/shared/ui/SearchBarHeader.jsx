@@ -5,7 +5,7 @@ import styles from "./SearchBarHeader.module.scss";
 
 import SearchBarResults from "../../widgets/SearchBarResults/SearchBarResults";
 
-function SearchBarHeader() {
+function SearchBarHeader({ withCustomHandler, onSelectReviewMovie }) {
   const [query, setQuery] = useState("");
   const { movies } = useMovies(query);
   const searchMovieRef = useRef();
@@ -49,6 +49,8 @@ function SearchBarHeader() {
               movies={movies}
               setOpen={setOpen}
               callbackToSetQuery={callbackToSetQuery}
+              withCustomHandler={withCustomHandler}
+              onSelectReviewMovie={onSelectReviewMovie}
             />
           )}
         </div>

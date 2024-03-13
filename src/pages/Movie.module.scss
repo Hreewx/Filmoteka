@@ -5,12 +5,17 @@
   position: relative;
 }
 
+.movieWrapper {
+  border-radius: 2rem;
+  padding: 1rem;
+}
+
 .movieContainer {
-  padding: 2rem;
   width: 100rem;
+  height: 50rem;
   margin: 0 auto;
   display: flex;
-  gap: 4rem;
+  gap: 3rem;
   background-color: $primary-white-color;
 }
 
@@ -22,11 +27,14 @@
 }
 
 .movieInfo {
+  padding: 2rem;
   & h1 {
     margin-bottom: 2rem;
+    font-size: 2.8rem;
   }
   & h2 {
     margin-bottom: 2rem;
+    font-size: 2.3rem;
   }
 }
 
@@ -42,4 +50,9 @@
   & .value {
     width: fit-content;
   }
+}
+
+.buttons {
+  display: flex;
+  gap: 2rem;
 }

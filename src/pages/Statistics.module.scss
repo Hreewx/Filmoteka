@@ -1,7 +1,9 @@
 @import "../app/styles/index.scss";
 
 .container {
-  @include container;
+  background: $gradient;
+  padding: 5rem;
+  min-height: 84vh;
 
   & h1 {
     color: $primary-white-color;
@@ -9,6 +11,12 @@
     text-align: center;
   }
   & p {
+    color: $primary-white-color;
+    margin-bottom: 2rem;
+  }
+  & h3 {
+    text-align: center;
+    margin-bottom: 2rem;
     color: $primary-white-color;
   }
 }

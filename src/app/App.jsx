@@ -20,6 +20,7 @@ import Links from "../pages/Links";
 import NewReview from "../pages/NewReview";
 import Suggestions from "../pages/Suggestions";
 import Movie from "../pages/Movie";
+import ReviewPage from "../pages/ReviewPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -91,6 +92,11 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/:groupId/suggestions",
         element: <Suggestions />,
+      },
+
+      {
+        path: "/dashboard/:groupId/review/:reviewId",
+        element: <ReviewPage />,
       },
 
       {

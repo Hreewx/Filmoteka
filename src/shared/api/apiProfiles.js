@@ -28,3 +28,14 @@ export async function createGroupMembers(members) {
 
   return data;
 }
+
+export async function getGroupMembersByGroupId(id) {
+  const { data, error } = await supabase
+    .from("group_members")
+    .select("id, login, iq, profile_fk")
+    .eq("groups_fk", id);
+
+  if (error) throw new Error("Group members could not be loaded");
+
+  return data;
+}

@@ -2,18 +2,25 @@
 
 .reviewRow {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  border: 1px solid $primary-white-color;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
   color: $primary-white-color;
   padding: 1rem;
   margin-bottom: 2rem;
 
+  &:not(:last-child) {
+    border-bottom: 1px solid $primary-white-color;
+  }
   & div {
     margin: 0 auto;
+
+    & button:not(:last-child) {
+      margin-bottom: 2rem;
+    }
   }
 
   & img {
     width: 15rem;
-    height: 15rem;
+    height: 20rem;
   }
 }
